@@ -2,6 +2,8 @@
 
 [rea.tools 简体中文首页](https://rea.tools/zh-CN/)的学习性复刻。**非官方项目，与 REA 作者无关。**
 
+在线预览：<https://0xfango.github.io/rea-tools-remake/>
+
 首页按参考站 1:1 复刻：八个区块、深浅主题、复制反馈、页内目录、两个可运行的演示、响应式断点与 SEO 结构。其余 18 条路由不在本次范围内，点进去会看到一页说明，并链接回参考站的真实页面——不做空壳页，也不做假按钮。
 
 ## 本地运行
@@ -12,6 +14,8 @@ npm run dev
 ```
 
 打开 http://localhost:4321/rea-tools-remake/ 。构建产物用 `npm run build`，预览用 `npm run preview`。无需任何后端或密钥。
+
+推送到 `main` 后由 [Actions 工作流](.github/workflows/deploy.yml) 自动构建并发布到 GitHub Pages。
 
 ## 参数出处
 

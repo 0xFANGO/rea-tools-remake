@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="REA — 了解软件的工作原理">
+  <rect width="1200" height="630" fill="#ffffff" />
+  <rect x="0" y="0" width="1200" height="6" fill="#294f82" />
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, PingFang SC, Noto Sans SC, Helvetica, Arial, sans-serif">
+    <text x="88" y="150" font-size="34" font-weight="650" fill="#20252b" letter-spacing="2">REA</text>
+    <text x="178" y="150" font-size="26" fill="#5b6570">Reverse Engineer Anything</text>
+    <text x="88" y="300" font-size="76" font-weight="650" fill="#20252b">弄清楚</text>
+    <text x="88" y="396" font-size="76" font-weight="650" fill="#20252b">软件如何工作。</text>
+    <text x="88" y="482" font-size="30" fill="#5b6570">和编程助手一起做逆向工程</text>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+    <rect x="88" y="520" width="520" height="60" rx="8" fill="#f4f6f8" stroke="#e0e5e9" />
+    <text x="112" y="558" font-size="22" fill="#20252b">npx rea-agents@latest setup</text>
+  </g>
+</svg>

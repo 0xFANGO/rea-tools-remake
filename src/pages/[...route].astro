@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../site";
+
+/**
+ * The remake covers the homepage (stage P0). The reference site has 18 more
+ * content routes that are linked from the homepage. Rather than leave those
+ * links broken or dress them up as finished pages, each one resolves here:
+ * a page that says plainly what is not built and sends the reader to the
+ * original. The requirements brief asks for exactly this instead of fake
+ * buttons or blank placeholders.
+ */
+export function getStaticPaths() {
+  const routes = [
+    { route: "get-started", label: "开始使用" },
+    { route: "first-investigation", label: "第一次调查" },
+    { route: "guides", label: "指南" },
+    { route: "guides/native", label: "原生程序指南" },
+    { route: "guides/javascript", label: "JavaScript / Electron 指南" },
+    { route: "guides/browser", label: "浏览器观察指南" },
+    { route: "showcase", label: "案例展示" },
+    { route: "showcase/aegis", label: "Aegis 验证器案例" },
+    { route: "showcase/ctf", label: "CTF 检查器案例" },
+    { route: "showcase/dx-ball", label: "DX-Ball 案例" },
+    { route: "showcase/notion", label: "Notion 剪贴板案例" },
+    { route: "showcase/th04", label: "TH04 弹幕案例" },
+    { route: "blog", label: "博客" },
+    { route: "blog/reverse-engineering-models", label: "模型与逆向工程" },
+    { route: "blog/touhou-reconstruction", label: "软件重建笔记" },
+    { route: "faq", label: "FAQ" },
+    { route: "contributors", label: "贡献者" },
+    { route: "examples/dino-lab", label: "恐龙速度实验室" },
+  ];
+  return routes.map(({ route, label }) => ({
+    params: { route },
+    props: { label, route },
+  }));
+}
+
+const { label, route } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const original = `https://rea.tools/zh-CN/${route}/`;
+---
+
+<BaseLayout
+  title={`${label} — 本复刻未包含`}
+  description={`${label} 不在本复刻的范围内。本页说明原因，并链接到 ${site.reference.name} 上的对应页面。`}
+>
+  <main id="main">
+    <section class="container hero">
+      <p class="eyebrow">本复刻未包含</p>
+      <h1>{label}</h1>
+      <p class="lede">
+        这个复刻项目目前只做了首页。<strong>{label}</strong> 是参考站上的真实页面，
+        但本项目没有复刻它，这里也不会放一个空壳页面冒充完成。
+      </p>
+      <div class="actions">
+        <a class="button" href={original} rel="noreferrer"
+          >在 {site.reference.name} 上打开这一页 →</a
+        >
+        <a class="text-link" href={`${base}/`}>返回复刻的首页</a>
+      </div>
+      <p class="caption">
+        本页存在的唯一目的，是让首页上的链接指向可用的内容，而不是 404。
+      </p>
+    </section>
+  </main>
+</BaseLayout>
